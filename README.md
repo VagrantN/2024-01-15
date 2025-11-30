@@ -29,9 +29,22 @@
   "links_num": 1
 }
 
-Получение PDF отчета
-Отправьте POST запрос на /generate-report:
-
 {
   "links_list": [1, 2, 3]
 }
+
+go get github.com/jung-kurt/gofpdf
+
+go run start.go
+
+http.HandleFunc("/test-pdf", func(w http.ResponseWriter, r *http.Request) {
+    allLinks := []LinkStatus{
+        {URL: "google.com", Status: "available"},
+        {URL: "yandex.ru", Status: "available"},
+        {URL: "invalid.gg", Status: "not available"},
+    }
+    pdf := generatePDF(allLinks)
+    w.Header().Set("Content-Type", "application/pdf")
+    w.Header().Set("Content-Disposition", "attachment; filename=report.pdf")
+    w.Write(pdf)
+})
