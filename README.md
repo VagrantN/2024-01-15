@@ -31,7 +31,7 @@
   "links_num": 1
 }
 
-2. Получение PDF отчета
+Получение PDF отчета
 Отправьте POST запрос на /generate-report:
 
 Запрос:
@@ -132,4 +132,5 @@ http.HandleFunc("/test-pdf", func(w http.ResponseWriter, r *http.Request) {
 
 
 Автоматическое создание файла данных при первом запуске
+
 
