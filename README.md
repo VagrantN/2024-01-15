@@ -32,9 +32,6 @@
 {
   "links_list": [1, 2, 3]
 }
-
-** **
-
 go get github.com/jung-kurt/gofpdf
 
 go run start.go
