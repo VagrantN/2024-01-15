@@ -132,3 +132,4 @@ http.HandleFunc("/test-pdf", func(w http.ResponseWriter, r *http.Request) {
 
 
 Автоматическое создание файла данных при первом запуске
+
